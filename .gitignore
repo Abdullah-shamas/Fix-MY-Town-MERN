@@ -1,0 +1,15 @@
+# dependencies
+mern-app/node_modules
+server-backend/node_modules
+
+# environment files
+*.env
+server-backend/.env
+mern-app/.env
+
+# logs
+*.log
+
+# system files
+.DS_Store
+Thumbs.db
