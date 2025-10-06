@@ -1,4 +1,4 @@
-const API_URL = `${process.env.REACT_APP_API_URL}/api/issues`;
+const API_URL = "https://fix-my-town-mern-4p5y.vercel.app//api/issues";
 
 const getToken = () => localStorage.getItem("token");
 
