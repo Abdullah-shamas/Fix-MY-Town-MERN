@@ -1,6 +1,4 @@
-// src/services/issueService.js
-
-const API_URL = "http://localhost:5000/api/issues";
+const API_URL = `${process.env.REACT_APP_API_URL}/api/issues`;
 
 const getToken = () => localStorage.getItem("token");
 
