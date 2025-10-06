@@ -6,24 +6,32 @@ import authRoutes from "./routes/authRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
 import issueRoutes from "./routes/issueRoutes.js";
 
- // ✅ ESM import
-
+// ✅ Load environment variables
 dotenv.config();
+
+// ✅ Connect MongoDB
 connectDB();
 
 const app = express();
-app.use(cors());
+
+// ✅ Enable CORS (for frontend)
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL || "*", // Allow your frontend
+  })
+);
+
 app.use(express.json());
 
-// Routes
+// ✅ Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/issues", issueRoutes);
 app.use("/api/admin", adminRoutes);
 
-// test route
+// ✅ Test route
 app.get("/", (req, res) => {
-  res.send("API is running...");
+  res.send("API is running successfully ✅");
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+// ❌ Remove app.listen() when deploying on Vercel
+export default app;
