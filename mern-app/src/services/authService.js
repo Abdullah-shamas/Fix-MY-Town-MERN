@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // ✅ Use environment variable instead of localhost
-const API_URL = `${process.env.REACT_APP_API_URL}/api/auth/`;
+const API_URL = "https://fix-my-town-mern-4p5y.vercel.app/api/auth/";
 
 // Register user
 export const register = async (userData) => {

@@ -1,6 +1,6 @@
 // src/services/userService.js
 
-const API_URL = "https://fix-my-town-mern-4p5y.vercel.app//api/users";
+const API_URL = "https://fix-my-town-mern-4p5y.vercel.app/api/users";
 
 const getToken = () => localStorage.getItem("token");
 
