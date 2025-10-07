@@ -14,13 +14,19 @@ connectDB();
 
 const app = express();
 
-// ✅ Enable CORS (for frontend)
+// ✅ Enable CORS properly
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "*", // Allow your frontend
+    origin: [
+      "https://fix-my-town-mern-866q.vercel.app", // ✅ your frontend
+    ],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
   })
 );
 
+// ✅ Parse JSON requests
 app.use(express.json());
 
 // ✅ Routes
@@ -33,5 +39,5 @@ app.get("/", (req, res) => {
   res.send("API is running successfully ✅");
 });
 
-// ❌ Remove app.listen() when deploying on Vercel
+// ❌ Remove app.listen() for Vercel
 export default app;
