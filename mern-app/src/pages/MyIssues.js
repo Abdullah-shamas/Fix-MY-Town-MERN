@@ -18,7 +18,7 @@ function MyIssues() {
         return;
       }
 
-      const res = await fetch("http://localhost:5000/api/issues/my", {
+      const res = await fetch("https://fix-my-town-mern-4p5y.vercel.app/api/issues/my", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

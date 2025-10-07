@@ -13,7 +13,7 @@ export default function DashboardAdmin() {
   const fetchIssues = () => {
     const token = localStorage.getItem("token");
 
-    fetch("http://localhost:5000/api/issues", {
+    fetch("https://fix-my-town-mern-4p5y.vercel.app/api/issues", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -30,7 +30,7 @@ export default function DashboardAdmin() {
   const handleStatusChange = async (id, newStatus) => {
     const token = localStorage.getItem("token");
     try {
-      const res = await fetch(`http://localhost:5000/api/issues/${id}/status`, {
+      const res = await fetch(`https://fix-my-town-mern-4p5y.vercel.app/api/issues/${id}/status`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

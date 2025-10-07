@@ -27,7 +27,7 @@ function ReportIssue() {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.post(
-        "http://localhost:5000/api/issues",
+        "https://fix-my-town-mern-4p5y.vercel.app/api/issues",
         formData,
         {
           headers: {
